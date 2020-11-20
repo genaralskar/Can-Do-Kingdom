@@ -1,0 +1,42 @@
+title: Start
+tags: 
+colorID: 0
+position: 1281,148
+---
+This is the start of the dialog
+[[Next]]
+===
+title: Next
+tags: 
+position: 1295.7410888671875,405
+---
+<<face Player -1 0>>
+Bob:: Look to the left!
+<<face Player 1 0>>
+Dob:: Look to the right!
+<<face Player 0 1>>
+Dot:: Look up!
+<<face Player 0 -1>>
+Pot:: Look at me!
+<<face Player>>
+<<autoContinue 1>>
+Dave:: K, go back to what you were doing
+[[ answer: Go Right |right]]
+[[ answer: Go Left |left]]
+===
+title: right
+tags: 
+position: 1464,664
+---
+<<hideBox>>
+<< moveWait Player spot1 >> 
+You chose right!
+===
+title: left
+tags: 
+colorID: 0
+position: 1116,650
+---
+<< move Player spot2 >> 
+You chose left!
+===
