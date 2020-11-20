@@ -6,11 +6,10 @@ namespace genaralskar.Actor
     [RequireComponent(typeof(Actor))]
     public class ActorCharacterInput : CharacterInput
     {
-        public bool dialogControl = false;
         public ActorInputs input;
         private ActorInputs defaultInput;
-        private Vector3 moveDirection;
-        private bool jump;
+        public ActorInputs defaultDialogInput;
+
 
         private void Awake()
         {
@@ -26,27 +25,27 @@ namespace genaralskar.Actor
             defaultInput = input;
         }
 
+        public void SetDialogInput()
+        {
+            input = defaultDialogInput;
+        }
+
         public override float GetHorizontalMovementInput()
         {
-            return moveDirection.x;
-            //return input.GetHorizontalInput();
+            //return moveDirection.x;
+            return input.GetVectorInput().x;
         }
 
         public override float GetVerticalMovementInput()
         {
-            return moveDirection.z;
-            //return input.GetVerticalInput();
+            //return moveDirection.z;
+            return input.GetVectorInput().z;
         }
 
         public override bool IsJumpKeyPressed()
         {
-            return jump;
-            //return input.GetJumpInput();
-        }
-
-        public void SetMoveDirection(Vector3 newDir)
-        {
-            moveDirection = newDir;
+            //return jump;
+            return input.GetJumpInput();
         }
 
         public void SetInput(ActorInputs newInput)

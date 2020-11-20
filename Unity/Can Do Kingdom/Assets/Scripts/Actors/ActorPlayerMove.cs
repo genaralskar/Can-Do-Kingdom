@@ -7,7 +7,7 @@ namespace genaralskar.Actor
     [RequireComponent(typeof(Actor))]
     [RequireComponent(typeof(ActorFacing))]
     [RequireComponent(typeof(ActorMove))]
-    public class ActorPlayerMove : MonoBehaviour
+    public class ActorPlayerMove : ActorInputs
     {
         private Actor actor;
         private ActorFacing facing;
@@ -20,20 +20,20 @@ namespace genaralskar.Actor
         private void Awake()
         {
             actor = GetComponent<Actor>();
-            facing = GetComponent<ActorFacing>();
-            move = GetComponent<ActorMove>();
+            //facing = GetComponent<ActorFacing>();
+            //move = GetComponent<ActorMove>();
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (!actor.playerControlling) return;
-            GetInputs();
-            move.SetMoveDirection(moveDirection);
-            move.SetMoveSpeed(speed);
+            //if (!actor.playerControlling) return;
+            //GetInputs();
+            //move.SetMoveDirection(moveDirection);
+            //move.SetMoveSpeed(speed);
         }
 
-        private void GetInputs()
+        private Vector3 GetInputs()
         {
             moveDirection.x = Input.GetAxis("Horizontal");
             moveDirection.y = Input.GetAxis("Vertical");
@@ -45,6 +45,18 @@ namespace genaralskar.Actor
             {
                 faceDirection = facing.FaceDirection;
             }
+
+            return moveDirection;
+        }
+
+        public override Vector3 GetVectorInput()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override bool GetJumpInput()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

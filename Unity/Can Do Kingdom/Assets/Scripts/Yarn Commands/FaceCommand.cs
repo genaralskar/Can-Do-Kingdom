@@ -58,7 +58,7 @@ public class FaceCommand : MonoBehaviour
         }
         **/
 
-        Debug.Log("setting facing to " + faceDirection);
+        //Debug.Log("setting facing to " + faceDirection);
         Actor a = SceneObjects.GetActor(parameters[actorNameIndex]);
         if (a != null)
             a.SetFacingEvent?.Invoke(faceDirection);

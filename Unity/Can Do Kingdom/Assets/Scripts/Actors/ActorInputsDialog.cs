@@ -6,14 +6,9 @@ namespace genaralskar.Actor
     {
         private Vector3 moveDirection;
         private bool jump = false;
-        public override float GetHorizontalInput()
+        public override Vector3 GetVectorInput()
         {
-            return moveDirection.x;
-        }
-
-        public override float GetVerticalInput()
-        {
-            return moveDirection.y;
+            return moveDirection;
         }
 
         public override bool GetJumpInput()

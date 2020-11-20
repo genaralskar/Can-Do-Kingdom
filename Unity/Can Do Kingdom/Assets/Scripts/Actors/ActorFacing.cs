@@ -41,7 +41,7 @@ namespace genaralskar.Actor
                 ttd.enabled = true;
                 ttd.direction = FaceDirection;
             }
-            Debug.Log("faceDirection " + FaceDirection);
+            //Debug.Log("faceDirection " + FaceDirection);
             FaceDirectionUpdated?.Invoke(FaceDirection);
         }
     }

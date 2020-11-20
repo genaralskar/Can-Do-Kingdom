@@ -6,50 +6,45 @@ namespace genaralskar.Actor
 {
     [RequireComponent(typeof(Actor))]
     [RequireComponent(typeof(ActorCharacterInput))]
-    public class ActorMoveTo : MonoBehaviour
+    public class ActorMoveTo : ActorInputs
     {
         private Actor actor;
-        private bool isPlayer = false;
         private Vector3 direction = Vector3.zero;
-        private ActorCharacterInput aci;
+        private Vector3 destination;
+        private bool isMoving = false;
 
         private void Awake()
         {
             actor = GetComponent<Actor>();
             actor.MoveEvent += MoveActorHandler;
-            aci = GetComponent<ActorCharacterInput>();
         }
 
         private void MoveActorHandler(Vector3 location)
         {
-            Debug.Log("Move to " + location);
-            StopAllCoroutines();
-            isPlayer = actor.playerControlling;
-            actor.playerControlling = false;
-            StartCoroutine(MoveTo(location));
+            //Debug.Log("Move to " + location);
+            destination = location;
+            isMoving = true;
         }
 
-        private IEnumerator MoveTo(Vector3 location)
+        public override Vector3 GetVectorInput()
         {
-            Debug.Log("Starting move!");
-            WaitForEndOfFrame wait = new WaitForEndOfFrame();
-            while (Vector3.Distance(actor.transform.position, location) > .1f)
+            if(!isMoving) return Vector3.zero;
+            //do stuff when we get to the destination
+            if (Vector3.Distance(actor.transform.position, destination) < .1f)
             {
-                //Debug.Log("Distance: " + Vector3.Distance(actor.transform.position, location));
-                //get direction
-                direction = location - actor.transform.position;
-                aci.SetMoveDirection(direction);
-                //actorMove.SetMoveDirection(direction);
-                yield return wait;
+                actor.transform.position = destination;
+                actor.MoveFinishEvent();
+                isMoving = false;
+                return Vector3.zero;
             }
-            Debug.Log("Ending Move!");
-            actor.transform.position = location;
-            actor.MoveFinishEvent();
-            direction = Vector3.zero;
-            aci.SetMoveDirection(direction);
-            //actorMove.SetMoveDirection(Vector3.zero);
-            if (isPlayer)
-                actor.playerControlling = true;
+
+            direction = destination - actor.transform.position;
+            return direction;
+        }
+
+        public override bool GetJumpInput()
+        {
+            return false;
         }
     }
 }

@@ -80,7 +80,7 @@ public class MoveCommand : MonoBehaviour
 
         if (type == MoveType.move)
         {
-            Debug.Log("move to " + location.Position);
+            //Debug.Log("move to " + location.Position);
             actor.MoveActor(location.Position);
         }
 
