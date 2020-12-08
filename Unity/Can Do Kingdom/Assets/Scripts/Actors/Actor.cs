@@ -33,7 +33,7 @@ namespace genaralskar.Actor
 
         public void MoveActor(Vector3 location)
         {
-            Debug.Log("Actor: move to " + location);
+            //Debug.Log("Actor: move to " + location);
             MoveEvent?.Invoke(location);
         }
 

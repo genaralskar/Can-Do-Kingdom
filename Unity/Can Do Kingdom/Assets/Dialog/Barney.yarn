@@ -1,0 +1,26 @@
+title: BarneyStart
+tags: 
+position: -168.88681507110596,-69.64405059814453
+---
+<< cam barneyCam >> 
+Barney:: Hello.
+<< cam barnECam >>
+Barney:: Look at my pigs!
+<< cam >>
+<<autoContinue>>
+Barney:: Ain't they cute?
+-> Yes
+    Barney:: Hehehe.
+-> No
+    <<cam barneyCam>>
+    Barney:: ...
+    <<autoContinue>>
+    Barney:: If you don't say yes, I'll cut you. Don't think I won't.
+    -> Yes
+        Barney:: That's what I thought!
+    -> No
+        <<cam barneyPreAngeyVC>>
+        Barney:: No
+        <<cam barneyAngeyVC>>
+        Barney:: Die
+===

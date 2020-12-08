@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using genaralskar.Actor;
+using Cinemachine;
 
 public class SceneObjects : MonoBehaviour
 {
     private static List<Actor> actors = new List<Actor>();
     private static List<Location> locations = new List<Location>();
+    private static List<CinemachineVirtualCamera> vcams = new List<CinemachineVirtualCamera>();
 
     private void Awake()
     {
@@ -13,6 +15,8 @@ public class SceneObjects : MonoBehaviour
         actors.AddRange(FindObjectsOfType<Actor>());
         //get list of all locations
         locations.AddRange(FindObjectsOfType<Location>());
+        //get list of all virual cams
+        vcams.AddRange(Resources.FindObjectsOfTypeAll<CinemachineVirtualCamera>());
     }
 
     public static Actor GetActor(string name)
@@ -63,5 +67,16 @@ public class SceneObjects : MonoBehaviour
             return null;
         }
         return locations[i];
+    }
+
+    public static CinemachineVirtualCamera GetVCam(string name)
+    {
+        int i = vcams.FindIndex(x => x.name == name);
+        if (i < 0)
+        {
+            Debug.LogWarning($"No Virtual Camera with name {name} found.");
+            return null;
+        }
+        return vcams[i];
     }
 }
