@@ -41,14 +41,13 @@ You chose left!
 
 title: move2
 tags: 
-position: 1639.5856448206787,138.0078002452251
+position: 1642.5856448206787,138.0078002452251
 ---
 I will now move Actor Bobby to location spot1
 <<autoContinue>>
 He moves. Look at that boi run.
 <<moveWait Bobby spot1>>
 Bobby has reached his destination
-On a side note, remind Collin to replace locations with actors if he hasn't already.
 ===
 title: move1
 tags: 

@@ -6,8 +6,12 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour, IInteractable
 {
     public UnityEvent OnInteractEvent;
-    public UnityEvent OnInteractStart;
+    public UnityEvent OnInteractEnter;
     public UnityEvent OnInteractLeave;
+
+    public string interactText;
+    public string InteractText { get => interactText; }
+
     public void OnInteract()
     {
         OnInteractEvent?.Invoke();
@@ -15,11 +19,11 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void OnLeaveInteract()
     {
-        
+        OnInteractLeave.Invoke();
     }
 
-    public void OnStartInteract()
+    public void OnEnterInteract()
     {
-
+        OnInteractEnter.Invoke();
     }
 }

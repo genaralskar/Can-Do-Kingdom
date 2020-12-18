@@ -4,8 +4,13 @@ using UnityEngine;
 
 namespace genaralskar
 {
+
     public class PlayerInteractor : MonoBehaviour
     {
+
+        public GameObject interactIcon;
+        public string interactText = "";
+
         private List<IInteractable> interactables = new List<IInteractable>();
         private IInteractable activeInteractable;
 
@@ -28,6 +33,8 @@ namespace genaralskar
             if (interactables.Contains(interact)) return;
             interactables.Add(interact);
             SetActiveInteractable(interact);
+            interactText = interact.InteractText;
+            interactIcon.SetActive(true);
             //Debug.Log("New interactable added: " + interact);
         }
 
@@ -63,6 +70,8 @@ namespace genaralskar
         private void RemoveActiveInteractable()
         {
             activeInteractable = null;
+            interactText = "";
+            interactIcon.SetActive(false);
             //Debug.Log("No more active interactables!");
         }
 
@@ -78,6 +87,8 @@ namespace genaralskar
         {
             if (activeInteractable == null) return;
             activeInteractable.OnInteract();
+            interactText = "";
+            interactIcon.SetActive(false);
         }
 
     }

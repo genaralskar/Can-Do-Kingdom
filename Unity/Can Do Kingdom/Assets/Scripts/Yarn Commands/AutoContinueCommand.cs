@@ -40,7 +40,8 @@ public class AutoContinueCommand : MonoBehaviour
         }
         else
         {
-            OnLineFinishDisplaying.Invoke();
+            StartCoroutine(ContinueButtonDelay());
+            Debug.Log("Line Finish Displaying");
         }
     }
 
@@ -49,5 +50,11 @@ public class AutoContinueCommand : MonoBehaviour
         yield return new WaitForSeconds(delay);
         autoGo = false;
         dui.MarkLineComplete();
+    }
+
+    private IEnumerator ContinueButtonDelay()
+    {
+        yield return new WaitForEndOfFrame();
+        OnLineFinishDisplaying.Invoke();
     }
 }

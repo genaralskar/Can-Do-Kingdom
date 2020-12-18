@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void OnStartInteract();
+    string InteractText { get; }
+
+    void OnEnterInteract();
     void OnInteract();
     void OnLeaveInteract();
 }

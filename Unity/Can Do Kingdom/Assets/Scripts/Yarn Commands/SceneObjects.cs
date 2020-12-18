@@ -58,16 +58,16 @@ public class SceneObjects : MonoBehaviour
         return (Vector2)actors[i].transform.position;
     }
 
-    public static Location GetLocation(string name)
-    {
-        int i = locations.FindIndex(x => x.name == name);
-        if (i < 0)
-        {
-            Debug.LogWarning($"No location with name {name} found.");
-            return null;
-        }
-        return locations[i];
-    }
+    //public static Location GetLocation(string name)
+    //{
+    //    int i = locations.FindIndex(x => x.name == name);
+    //    if (i < 0)
+    //    {
+    //        Debug.LogWarning($"No location with name {name} found.");
+    //        return null;
+    //    }
+    //    return locations[i];
+    //}
 
     public static CinemachineVirtualCamera GetVCam(string name)
     {

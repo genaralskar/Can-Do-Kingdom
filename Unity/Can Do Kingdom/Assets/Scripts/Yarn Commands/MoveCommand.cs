@@ -37,7 +37,7 @@ public class MoveCommand : MonoBehaviour
         Actor actor = SceneObjects.GetActor(parm[0]);
 
         //find location in scene with name parameters[1]
-        Location location = SceneObjects.GetLocation(parm[1]);
+        Actor location = SceneObjects.GetActor(parm[1]);
 
         if (actor == null)
         {
@@ -47,14 +47,14 @@ public class MoveCommand : MonoBehaviour
         }
         if (location == null)
         {
-            Debug.LogWarning($"No location with name {parm[1]} found. Continuing dialogue");
+            Debug.LogWarning($"No actor with name {parm[1]} found. Destination not found, continuing dialogue");
             onComplete?.Invoke();
             return;
         }
 
         if (type == MoveType.wait)
         {
-            actor.MoveActorBlocking(location.Position, onComplete);
+            actor.MoveActorBlocking(location.transform.position, onComplete);
         }
     }
 
@@ -64,7 +64,7 @@ public class MoveCommand : MonoBehaviour
         Actor actor = SceneObjects.GetActor(parms[0]);
 
         //find location in scene with name parameters[1]
-        Location location = SceneObjects.GetLocation(parms[1]);
+        Actor location = SceneObjects.GetActor(parms[1]);
 
         if (actor == null)
         {
@@ -81,12 +81,12 @@ public class MoveCommand : MonoBehaviour
         if (type == MoveType.move)
         {
             //Debug.Log("move to " + location.Position);
-            actor.MoveActor(location.Position);
+            actor.MoveActor(location.transform.position);
         }
 
         if (type == MoveType.instant)
         {
-            actor.SetActorPosition(location.Position);
+            actor.SetActorPosition(location.transform.position);
         }
     }
 }
