@@ -1,0 +1,60 @@
+title: Start
+tags: 
+position: 1310.1658935546875,129.7634391784668
+---
+Hello Dave. What test can I perform for you today?
+[[Player Facing|Next]]
+[[Move Other Actor|move2]]
+[[Move Player|move1]]
+===
+title: Next
+tags: 
+position: 1012.7442626953125,134.22283935546875
+---
+<<face Player -1 0>>
+Bob:: Look to the left!
+<<face Player 1 0>>
+Dob:: Look to the right!
+<<face Player 0 1>>
+Dot:: Look up!
+<<face Player 0 -1>>
+Pot:: Look at me!
+<<face Player>>
+<<autoContinue 1>>
+Dave:: K, go back to what you were doing
+===
+title: right
+tags: 
+position: 1383.5097045898438,658.7219848632812
+---
+<<hideBox>>
+<< moveWait Player spot1 >> 
+You chose right!
+===
+title: left
+tags: 
+position: 1123.9169921875,661.8755798339844
+---
+<< move Player spot2 >> 
+You chose left!
+===
+
+title: move2
+tags: 
+position: 1639.5856448206787,138.0078002452251
+---
+I will now move Actor Bobby to location spot1
+<<autoContinue>>
+He moves. Look at that boi run.
+<<moveWait Bobby spot1>>
+Bobby has reached his destination
+On a side note, remind Collin to replace locations with actors if he hasn't already.
+===
+title: move1
+tags: 
+position: 1299.205612102944,378.8742255635822
+---
+[[Move Wait|right]]
+[[Move No Wait|left]]
+===
+
