@@ -6,7 +6,7 @@ public interface IInteractable
 {
     string InteractText { get; }
 
-    void OnEnterInteract();
-    void OnInteract();
-    void OnLeaveInteract();
+    void OnEnterInteract(genaralskar.Actor.Actor actor);
+    void OnInteract(genaralskar.Actor.Actor actor);
+    void OnLeaveInteract(genaralskar.Actor.Actor actor);
 }

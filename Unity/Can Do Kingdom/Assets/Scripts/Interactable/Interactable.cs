@@ -12,17 +12,17 @@ public class Interactable : MonoBehaviour, IInteractable
     public string interactText;
     public string InteractText { get => interactText; }
 
-    public void OnInteract()
+    public void OnInteract(genaralskar.Actor.Actor actor)
     {
         OnInteractEvent?.Invoke();
     }
 
-    public void OnLeaveInteract()
+    public void OnLeaveInteract(genaralskar.Actor.Actor actor)
     {
         OnInteractLeave.Invoke();
     }
 
-    public void OnEnterInteract()
+    public void OnEnterInteract(genaralskar.Actor.Actor actor)
     {
         OnInteractEnter.Invoke();
     }

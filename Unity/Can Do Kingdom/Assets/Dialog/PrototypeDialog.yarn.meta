@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 4395f3e7294dc8e4389979d60ddcce75
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - PrototypeDialog-ProtoStall-0
+  - PrototypeDialog-ProtoStall-1
+  - PrototypeDialog-ProtoStall-2
+  - PrototypeDialog-ProtoStall-3
+  - PrototypeDialog-ProtoStall-4
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: "Error on line 13 at position 31:\nmismatched input '}'
+    expecting '('\r\nStallman:: <size=150%>{horiexp}<wave><rainb>STALLMAN</rainb></wave>{/horiexp}\r\r\n                             
+    ^"
+  baseLanguage: {fileID: 7128917941130120860, guid: 4395f3e7294dc8e4389979d60ddcce75,
+    type: 3}
+  localizations: []

@@ -14,6 +14,8 @@ namespace genaralskar
         private List<IInteractable> interactables = new List<IInteractable>();
         private IInteractable activeInteractable;
 
+        [SerializeField] private Actor.Actor player;
+
         private void OnTriggerEnter(Collider other)
         {
             IInteractable i = other.GetComponent<IInteractable>();
@@ -34,6 +36,9 @@ namespace genaralskar
             interactables.Add(interact);
             SetActiveInteractable(interact);
             interactText = interact.InteractText;
+
+            interact.OnEnterInteract(player);
+
             interactIcon.SetActive(true);
             //Debug.Log("New interactable added: " + interact);
         }
@@ -43,6 +48,9 @@ namespace genaralskar
             if (interactables.Contains(interact))
             {
                 interactables.Remove(interact);
+
+                interact.OnLeaveInteract(player);
+
                 if (activeInteractable == interact)
                 {
                     int x = interactables.Count;
@@ -77,7 +85,7 @@ namespace genaralskar
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(interactIcon.activeSelf && Input.GetButtonDown("Interact"))
             {
                 Interact();
             }
@@ -86,7 +94,7 @@ namespace genaralskar
         private void Interact()
         {
             if (activeInteractable == null) return;
-            activeInteractable.OnInteract();
+            activeInteractable.OnInteract(player);
             interactText = "";
             interactIcon.SetActive(false);
         }

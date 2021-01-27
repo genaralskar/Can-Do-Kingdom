@@ -41,7 +41,7 @@ public class AutoContinueCommand : MonoBehaviour
         else
         {
             StartCoroutine(ContinueButtonDelay());
-            Debug.Log("Line Finish Displaying");
+            //Debug.Log("Line Finish Displaying");
         }
     }
 
