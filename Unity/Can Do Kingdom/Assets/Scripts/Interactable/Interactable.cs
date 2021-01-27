@@ -6,20 +6,24 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour, IInteractable
 {
     public UnityEvent OnInteractEvent;
-    public UnityEvent OnInteractStart;
+    public UnityEvent OnInteractEnter;
     public UnityEvent OnInteractLeave;
-    public void OnInteract()
+
+    public string interactText;
+    public string InteractText { get => interactText; }
+
+    public void OnInteract(genaralskar.Actor.Actor actor)
     {
         OnInteractEvent?.Invoke();
     }
 
-    public void OnLeaveInteract()
+    public void OnLeaveInteract(genaralskar.Actor.Actor actor)
     {
-        
+        OnInteractLeave.Invoke();
     }
 
-    public void OnStartInteract()
+    public void OnEnterInteract(genaralskar.Actor.Actor actor)
     {
-
+        OnInteractEnter.Invoke();
     }
 }

@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7639193205884198984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018693612046298304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258341de3c8b83c43b2db26625befd4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalInputAxis: Horizontal
+  verticalInputAxis: Vertical
+  jumpInput: Jump
+  useRawInput: 1
 --- !u!1 &4421138330181124930
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,22 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7aac14b915cb14a97e25bf985d8c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7639193205884198984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018693612046298304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258341de3c8b83c43b2db26625befd4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalInputAxis: Horizontal
-  verticalInputAxis: Vertical
-  jumpInput: Jump
-  useRawInput: 1
+  interactIcon: {fileID: 0}
+  interactText: 
+  player: {fileID: 3018693612046298334}
 --- !u!1001 &4596015499202722313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +171,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4596015499202722313}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3018693612046298334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1597896498617013975, guid: f4559f45b72368b4a8d4b291e394df2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4596015499202722313}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018693612046298304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a37e738d97ad34fa943627b044dba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3018693611892811101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1597896498731179860, guid: f4559f45b72368b4a8d4b291e394df2c,

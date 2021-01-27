@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void OnStartInteract();
-    void OnInteract();
-    void OnLeaveInteract();
+    string InteractText { get; }
+
+    void OnEnterInteract(genaralskar.Actor.Actor actor);
+    void OnInteract(genaralskar.Actor.Actor actor);
+    void OnLeaveInteract(genaralskar.Actor.Actor actor);
 }
