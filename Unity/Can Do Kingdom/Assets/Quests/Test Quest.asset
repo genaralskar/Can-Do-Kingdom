@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b00d737b380ff44ca859b0752f3b718, type: 3}
+  m_Name: Test Quest
+  m_EditorClassIdentifier: 
+  questName: Farm Introduction
+  questDescription: Uncle has told me to go out back and talk to my Cousin, Cleetus.
+    I wonder what he wants.
+  prereqQuests: []
+  currentQuestStep: 0
+  questSteps:
+  - name: Get The Keys
+    stepDescription: Cleetus needs his keys, and they've been stuck up on top of
+      the cow pens! I need to find a way to get up there and give them to Cleetus
+  - name: Feed The Cows
+    stepDescription: Cleetus took the keys and is cleaning them up. Now I need to
+      take some hay and put it in the cow troughs to feed the animals.
+  - name: Get The Watering Can
+    stepDescription: Cleetus gave me the key and said it will unlock the chest in
+      the house, where I can get the watering can.
+  - name: Water The Crops
+    stepDescription: I've got the watering can. Now I'll need to fill it at the well,
+      and it use it water the crops.
+  - name: Talk To Uncle
+    stepDescription: I've done everything Cleetus needed. He said Uncle had something
+      important to tell me, I should talk to him. I think he's in the house somewhere.

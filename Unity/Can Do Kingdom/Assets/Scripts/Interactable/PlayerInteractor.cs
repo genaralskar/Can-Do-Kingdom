@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace genaralskar
@@ -9,6 +10,7 @@ namespace genaralskar
     {
 
         public GameObject interactIcon;
+        public TextMeshPro interactTextObject;
         public string interactText = "";
 
         private List<IInteractable> interactables = new List<IInteractable>();
@@ -35,7 +37,7 @@ namespace genaralskar
             if (interactables.Contains(interact)) return;
             interactables.Add(interact);
             SetActiveInteractable(interact);
-            interactText = interact.InteractText;
+            
 
             interact.OnEnterInteract(player);
 
@@ -71,6 +73,9 @@ namespace genaralskar
             if (activeInteractable != interact)
             {
                 activeInteractable = interact;
+                interactText = interact.InteractText;
+                Debug.Log($"interact: {interact}, interact text: {interact.InteractText}");
+                interactTextObject.text = interactText;
                 //Debug.Log("New active interactable: " + interact);
             }
         }
@@ -83,6 +88,7 @@ namespace genaralskar
             //Debug.Log("No more active interactables!");
         }
 
+        //Inputs!
         private void Update()
         {
             if(interactIcon.activeSelf && Input.GetButtonDown("Interact"))
@@ -98,6 +104,5 @@ namespace genaralskar
             interactText = "";
             interactIcon.SetActive(false);
         }
-
     }
 }

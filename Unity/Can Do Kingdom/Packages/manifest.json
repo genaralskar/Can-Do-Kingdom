@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.malee.reorderablelist": "https://github.com/cfoulston/Unity-Reorderable-List.git",
     "com.unity.cinemachine": "2.7.1",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
@@ -47,6 +48,10 @@
     "dev.yarnspinner.unity": {
       "revision": "HEAD",
       "hash": "7e42641d65c648238a6971799ec5293bfdc8ac79"
+    },
+    "com.malee.reorderablelist": {
+      "revision": "HEAD",
+      "hash": "ac1f508240fb752b1f9d7c222c231d7f2a33df87"
     }
   }
 }

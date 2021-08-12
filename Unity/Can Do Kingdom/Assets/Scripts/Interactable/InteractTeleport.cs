@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace genaralskar
 {
     public class InteractTeleport : MonoBehaviour, IInteractable
     {
         [SerializeField] private Transform teleportLocation;
+
+        [SerializeField]
+        private UnityEvent teleportEvent;
 
         public string InteractText => "Use";
 
@@ -19,6 +23,7 @@ namespace genaralskar
         {
             player.transform.position = teleportLocation.position;
             player.transform.GetChild(0).rotation = teleportLocation.rotation;
+            teleportEvent?.Invoke();
         }
 
         public void OnLeaveInteract(Actor.Actor player)

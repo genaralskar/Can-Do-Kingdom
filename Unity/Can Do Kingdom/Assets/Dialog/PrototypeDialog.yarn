@@ -1,12 +1,12 @@
 title: PrototypeStart
 tags: 
-position: 131,-139
+position: -1052.7624053955078,503.6804962158203
 ---
 
 ===
 title: ProtoStall
 tags: 
-position: -119,28
+position: -126.3568229675293,461.77674865722656
 ---
 ???:: Well <dangle>hello!</dangle>
 ???:: Who am I? Well, if you must ask, I am know as...
@@ -16,10 +16,329 @@ Stallman:: Well, if you need anything form ol' <rainb>Stallman</rainb>, just let
 ===
 title: ProtoPost
 tags: 
-position: 419.3345947265625,61.46095275878906
+position: -1608.823299407959,-235.59467887878418
 ---
-Postman:: *(rot*) Hey, *(/rot*) how did <shake d=2>you</shake> get here? 
-Postman:: The door? What door? It's just an empty void, and you just popped in here!
-Postman:: Look, something <wiggle>weird</wiggle> is going on here. I mean, just the other day I was trying to take some food out of the fridge, right? Well, I open the door and you won't believe what was inside. <shake>NOTHING!</shake> Nothing at all! And I know mom bought some groceries last week, so what gives!?
-Postmanbaby:: And what gives with the weird colors going around? I swear, sometimes I see someone out of the corner of my eye and the next thing I know they're gone, <fade>just like that</fade>.
+<<hideBox>>
+<<moveWait Player postDesk>>
+Player:: ...
+<<hideBox>>
+<<face Player -1 0>>
+<<wait 1>>
+<<face Player 1 0>>
+<<wait 1>>
+<<face Player 0 1>>
+Player:: Hello?
+Player:: Anyone here?
+**Thudunk**
+<<wait .1>>
+<<face Player 1 1>>
+Player:: Hello?
+<<face Player>>
+<<cam>>
+===
+title: ProtoCleetus
+tags: 
+position: 661.8187599182129,-188.6492919921875
+---
+<<if $cleetusQuest is 0>>
+    [[CleetusJump]]
+<<endif>>
+<<if $cleetusQuest is 1>>
+    [[CleetusFeed]]
+<<endif>>
+<<if $cleetusQuest is 2>>
+    [[CleetusWater]]
+<<endif>>
+<<if $cleetusQuest is 3>>
+    [[CleetusWaterShort]]
+<<endif>>
+<<if $cleetusQuest is 4>>
+    [[CleetusDone]]
+<<endif>>
+<<if $cleetusQuest is 5>>
+    [[CleetusDoneShort]]
+<<endif>>
+===
+title: CleetusJump
+tags: 
+position: 288.7869882140666,117.60880897905542
+---
+Cleetus:: Mornin. Looks like that done cow done cowed up the farm. Help Un-cow this cow farm, and maybe it will learn it's lesson.
+Cleetus:: I can only pray.
+<<cam cleetusJumpCam>>
+Cleetus:: Take a look up here see. That boisterous bovine plum done stuck muh keys up on that there cow pen. Think you can get it for me?
+Cleetus:: Press *(jump*) to jump. Hold it down to jump higher and farther.
+<<cam>>
+Cleetus:: At least, that's what muh ma says. I never did really understand it
+Cleetus:: Also, be sure not to get stuck in the edges. The interdemential powers that be may now allow you use of the floor again afterwords.
+===
+title: CleetusFeed
+tags: 
+position: 533.1455939724318,124.24888153744132
+---
+Cleetus:: Good job. Boy are these covered in what I hope is mud.
+Cleetus:: Say, why don't you feed the animals with this here hay, and I'll get these cleaned up faster than you can says Pneumonoultramicroscopicsilicovolcanoconiosis
+===
+title: CleetusWater
+tags: 
+position: 776.3884325244106,127.60456086268562
+---
+Cleetus:: All rizzity righty! Them 'mals and fed better than... animals that aint....
+Cleetus:: Now! Those there crops need some sweet life blood.
+Cleetus:: No, not your blood, ain't rich enough for em. I'm talking about water!
+Cleetus:: Now take this here key that I've done up all shiney like and open the locker in the house, there should be a watering can inside
+Cleetus:: Take it, fill it from the well over yander, and shower the puppies with that sweet sweet nectar o' life.
+<<set $cleetusQuest to 3>>
+===
+title: CleetusDone
+tags: 
+position: 1024.700149392433,129.34061602162467
+---
+Cleetus:: Well, looks like you've done just 'bout all I could ask for our here. Good job!
+Cleetus:: I think my old man wants to talk to you 'bout something. Sounded important. I think he's hanging around the house somewheres.
+<<set $cleetusQuest to 5>>
+===
+title: CleetusWaterShort
+tags: 
+position: 770.9239511755258,347.29768708295614
+---
+Cleetus:: Use that key I gave you to get the watering can from the house. Then fill it from the well, and go water the plants!
+===
+title: CleetusDoneShort
+tags: 
+position: 1030.1956746942258,351.58608919110793
+---
+Cleetus:: Go talk to my old man in the house.
+===
+
+title: Locked
+tags: 
+position: 113.72113609313965,389.40875244140625
+---
+It's Locked
+===
+
+title: WateringCan
+tags: 
+position: -791.4531593322754,173.45345306396484
+---
+Digging through a rather messily organized chest...
+You find a watering can!
+===
+title: DontNeed
+tags: 
+position: -790.3044548034668,-132.10030364990234
+---
+I don't need that right now
+===
+title: FillCan
+tags: 
+position: -273.3902130126953,-264.2006072998047
+---
+You fill the can with water
+===
+title: CanIsFilled
+tags: 
+position: 83.85498046875,-241.22665405273438
+---
+Your watering can is already full
+===
+title: UncleStart
+tags: 
+position: 1657.038860321045,-99.97343444824219
+---
+<<if $cleetusQuest is 5>>
+    <<if $postQuest is 0>>
+        [[UnclePost]]
+    <<else>>
+        [[UnclePostStarted]]
+    <<endif>>
+<<else>>
+    [[UncleFarmWork]]
+<<endif>>
+===
+title: UnclePost
+tags: 
+position: 1640.9444827898174,388.2764669976233
+---
+Uncle:: Well look at you, growing up before my very eyes.
+Uncle:: Heck, I remember when you were just a wee lad, running around, bumping your head into just about everything, clotheslining yourself.
+Uncle:: It was hilarious! Heh heh.
+Uncle:: Anyway, I need you you do me a favor. I sent out a letter not to long ago, and I need to make sure it got sent proper.
+Uncle:: It's important, like <i>reeaall</i> important.
+Uncle:: So if you could just head to the post office in town and see that it got sent, I'd be right grateful.
+Uncle:: And again, can't stress this enough, <i>reeeeaaaallll</i> important. So don't mess this up now ya hear?
+<<autoContinue .1>>
+Player:: Well I guess I
+Uncle:: That's the sprit! Thanks a lot kid!
+<<set $postQuest to 1>>
+===
+title: UncleFarmWork
+tags: 
+position: 1369.8102233757531,418.75945028227784
+---
+Uncle:: Hey kid, hows it going?
+Uncle:: Why don't you go out back and see if you can't help your cousin with none of that there farm work, eh?
+===
+title: PostQuest
+tags: 
+position: -2184.5392417907715,16.65334701538086
+---
+<<if $postQuest is 0>>
+    
+<<endif>>
+===
+title: UnclePostStarted
+tags: 
+position: 1878.961417798013,363.2862609776173
+---
+Uncle:: Have you found out if that letter's been sent by the <color="red">Post Office</color> yet?
+===
+title: DogWalkStart
+tags: 
+position: -460.6280288696289,212.5092010498047
+---
+Old Lady:: Hello youngin'.
+Old Lady:: Would you be a dear and walk by my dog for me?
+Old Lady:: I'm not as spry as I used to be, buy Humphrey sure is...
+-> Of course!
+    Old Lady:: Oh thank you so much!
+    <<unityEvent 0>>
+-> Buzz off!
+    <<unityEvent 0>>
+    Old Lady:: Oh deary me...
+    Old Lady:: ...
+    Old Lady:: Humphrey, sick 'em!
+===
+title: DogWalkStop
+tags: 
+position: -188.9330825805664,87.37372207641602
+---
+<<autoContinue>>
+Old Lady:: Oh no, you're back. I mean
+Old Lady:: Oh, thank you so much. I'm sure Humphrey enjoyed the peace and quiet.
+Old Lady:: I mean, the fresh air, yes. He doesn't get out that often anymore. Always stuck around the house. Always stuck around me...
+Old Lady:: Anyway, thank you again. If you ever want to walk him again, just let me know.
+Old Lady:: Please.
+<<unityEvent 1>>
+===
+title: LooseConnector
+tags: 
+position: -554.9920997619629,-540.5756912231445
+---
+[[FillCan]]
+[[DontNeed]]
+[[WateringCan]]
+[[CanIsFilled]]
+[[ProtoStall]]
+[[Locked]]
+[[DogWalkStart]]
+[[DogWalkStop]]
+===
+title: ProtoPostQuest
+tags: 
+position: -1609.440029144287,-489.5736083984375
+---
+<<if $postQuest is 1>>
+    [[ProtoPost]]
+<<endif>>
+===
+title: PostMeet
+tags: 
+position: -1209.018310546875,-243.19183349609375
+---
+<<hideBox>>
+<<cam postPlayer>>
+<<moveWait Player postRoom1>>
+<<face Player 0 1>>
+Player:: Um... Excuse me?
+<<cam track>>
+Petey:: Yeah, what do <i>you</i> want?
+<<cam postPlayer>>
+Player:: Well, I need to see if a letter my Uncle sent got delivered.
+<<cam track>>
+Potter:: Hah, fat chance. We don't plan on delivering a single piece paper anytime soon kid.
+<<cam postPlayer>>
+Player:: ...
+Player:: This <i>is</i> the post office right?
+<<cam track>>
+Holly:: You bet your sweet tush it is kid, but that don't mean we gotta do what our jobs say we gotta do!
+<<cam postPlayer>>
+Player:: What?
+<<cam track>>
+Petey:: We're tired of being treated like dirt!
+Potter:: We're tired of drudging through the mud and the dirt, and for what!?
+Holly:: There's just way too much dirt, so until we start feeling appriciated, we ain't moving a muscle!
+Petey:: That's right! We're on strike!
+Potter:: Yeah, on strike!
+Holly:: YEAH! On Strike!
+<<cam postPlayer>>
+Player:: Uh, ok. I just really need you guys to deliver that letter.
+<<cam track>>
+Petey:: Yeah, well you can shove it!
+Potter:: Yeah, shove it!
+Holly:: <speed=0.5>YEEEEAAAAHHHHH. <waitfor=.5><speed=1>Shove it!
+<<cam mailCam>>
+Petey:: I'd say you could do it yourself, but good luck with that! We haven't touch that mail pile for over a week!
+Potter:: I doubt you'd be able to find what you need. Like a needle in a haystack.
+Holly:: It's really suprising how much mail gets sent through here. You'd think they'd appriciate us a little more.
+<<cam postPlayer>>
+Player:: Well, can I do anything to like, speed this along? What are you on strike for anyway?
+<<cam track>>
+Petey:: We're tired of being treated like lower class, like some unimportant... people... things
+Potter:: Them big city boys get all the special treatment, and we want a part of it!
+Holly:: Yeah! We won't lift another finger 'till we get <color=blue>matching uniforms</color>, just like them!
+<<cam postPlayer>>
+Player:: ...
+Player:: You're on strike for... Matching... Uniforms...
+<<cam track>>
+Petey:: Yeah!
+Potter:: YEAH!
+Holly:: Yeah<waitfor=.8>, That about sums it up.
+<<cam postPlayer>>
+Player:: Right, well, This is a <i>reeeeaaaallll</i> important letter, so I guess I can help?
+<<cam track>>
+Petey:: Excellent!
+Potter:: Stupendus!
+Holly:: Uh, great!
+Petey:: We've been thinking up some plans. Got lots of ideas ruminating about our head space!
+Potter:: We've been thinking and thinking, wait for the perfect plan
+Holly:: But nothing we come up with seems to fit our agenda.
+Petey:: Our creed.
+Potter:: Our goals!
+Holly:: Our agenda!
+<<cam postPlayer>>
+Player:: Why not just make them yourselves?
+Postmen and Holly:: ...
+<<cam track>>
+Petey:: Brilliant!
+<<autoContinue .1>>
+Potter:: Wonder-lishious-iferous!
+Holly:: You can do that?!
+Potter:: Hey, don't cut me off.
+Holly:: <size=80%>Sorry.</size>
+Potter:: Aw, it's okay, don't worry about it.
+Holly:: Thanks Potter, you're the best!
+<<cam postPlayer>>
+Player:: Yeah, so making clothes isn't that hard. I think.
+Player:: You just need to get the materials, come up with a design, and sew it all together right?
+<<cam track>>
+Petey:: I might know someone that can help with materials!
+Potter:: I've always had impeccable taste, I'm sure I can come up with a design!
+Holly:: And I know how to sow! I already fix our shabby good for nothing outfits when they get ripped up on the job!
+Petey:: Come talk to us and see how you can help us.
+Potter:: We'll each need something a little different.
+Holly:: ...
+Holly:: Oh! Uh, what they said!
+<<set $postQuest to 2>>
+<<cam>>
+<<face Player>>
+===
+title: PostRoom
+tags: 
+position: -1202.9307594299316,-469.1832733154297
+---
+<<if $postQuest is 1>>
+    [[PostMeet]]
+<<endif>>
 ===

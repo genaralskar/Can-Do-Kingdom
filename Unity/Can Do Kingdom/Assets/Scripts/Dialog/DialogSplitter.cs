@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogSplitter : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogText;
+
+    public static UnityAction<string> DialogNameSplit;
+    public static UnityAction<string> DialogSplit;
     public void SplitDialog(string dialog)
     {
 
@@ -28,6 +32,7 @@ public class DialogSplitter : MonoBehaviour
         }
 
         nameText.text = nText;
+        DialogNameSplit?.Invoke(nText);
         dialogText.text = dText;
     }
 }

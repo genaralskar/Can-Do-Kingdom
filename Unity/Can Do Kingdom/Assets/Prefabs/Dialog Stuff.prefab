@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 4887193288597259691}
   - component: {fileID: 4887193288597259692}
   - component: {fileID: 4887193288597259693}
+  - component: {fileID: 2478735482970150963}
   m_Layer: 0
   m_Name: Dialogue Commands
   m_TagString: Untagged
@@ -868,6 +869,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 0}
+--- !u!114 &2478735482970150963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4887193288597259695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b43b721fd7096a45be49caf0385b817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 0}
+  events:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: StartWalk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: StopWalk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4887193288603610473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,19 +1174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables:
-  - name: north
-    value: false
-    type: 2
-  - name: east
-    value: false
-    type: 2
-  - name: south
-    value: false
-    type: 2
-  - name: west
-    value: false
-    type: 2
+  defaultVariables: []
   debugTextView: {fileID: 0}
 --- !u!114 &4887193288634364558
 MonoBehaviour:
@@ -2359,6 +2388,7 @@ GameObject:
   - component: {fileID: 4887193289311020055}
   - component: {fileID: 4887193289311020040}
   - component: {fileID: 4887193289311020041}
+  - component: {fileID: 3383422620941017712}
   m_Layer: 5
   m_Name: Dialog Box
   m_TagString: Untagged
@@ -2497,6 +2527,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 4887193288824607770}
   dialogText: {fileID: 4887193289966115940}
+--- !u!114 &3383422620941017712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4887193289311020043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437aaaa35d56504448cd62cece237001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4887193289966115939}
+  inputName: Jump
 --- !u!1 &4887193289381503068
 GameObject:
   m_ObjectHideFlags: 0

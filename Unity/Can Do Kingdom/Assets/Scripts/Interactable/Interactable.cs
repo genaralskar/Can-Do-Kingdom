@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using genaralskar;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +10,14 @@ public class Interactable : MonoBehaviour, IInteractable
     public UnityEvent OnInteractEnter;
     public UnityEvent OnInteractLeave;
 
-    public string interactText;
+    private void Awake()
+    {
+        GetComponent<Renderer>().enabled = false;
+        gameObject.layer = LayerMask.NameToLayer("Interact");
+    }
+
+    [SerializeField]
+    private string interactText;
     public string InteractText { get => interactText; }
 
     public void OnInteract(genaralskar.Actor.Actor actor)
@@ -19,11 +27,11 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void OnLeaveInteract(genaralskar.Actor.Actor actor)
     {
-        OnInteractLeave.Invoke();
+        OnInteractLeave?.Invoke();
     }
 
     public void OnEnterInteract(genaralskar.Actor.Actor actor)
     {
-        OnInteractEnter.Invoke();
+        OnInteractEnter?.Invoke();
     }
 }
